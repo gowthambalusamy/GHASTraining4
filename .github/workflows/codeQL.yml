@@ -19,10 +19,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: javascript  # Replace with your project's language(s)
-          config-file: .github/codeql/codeql-config.yml  # Use custom CodeQL config file
+        uses: github/codeql-action/init@v1
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript  # Replace with your project's language
+          config-file: ./.github/codeql/codeql-config.yml  # ✅ Corrected path
